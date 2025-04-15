@@ -1,0 +1,121 @@
+html {
+    box-sizing: border-box;
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+  img{
+    max-width: inherit;
+  
+    
+  }
+  body{
+    background-color:rgb(195,197,170,100);
+      background-repeat: no-repeat;
+      background-size:cover;
+      font-family: "filson-pro", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+      display: grid;
+      grid-template-columns: repeat(6,1fr);
+      margin: 0;
+      padding:0;
+      gap:10px;
+    }
+  
+    header.primary{
+     background-color:rgb(65,72,51,100);
+     font-size: 20px;
+     grid-column-start: 1;
+     grid-column-end: 12;
+     grid-row-start: 1;
+     grid-row-end: 1;
+     height:100px;
+    
+  
+   
+     
+    
+     
+    }
+    header.primary h1{
+      font-family: "capellina-caps", serif;
+      font-weight: 600;
+      font-style: normal;
+      font-size: 50px;
+      color: #f6f6fa;
+      text-align: left;
+      display: inline;
+      padding:10px;
+      margin-left: -100px;
+    }
+
+    .navbar{
+      background-color: rgb(65,72,51,100);
+      width:100%;
+      height: 40px;
+        overflow: hidden;
+        display:inline;
+        margin-left: 20px;
+      text-align: center;
+    }
+    
+    .navbar ul{
+      background-color:rgb(65,72,51,100);
+list-style-type: none;
+
+    }
+    .navbar li{
+      display: inline;
+        padding: 10px;
+        margin-left:20px;
+    }
+.navbar a{
+    color:#f6f6fa;
+    text-align:left;
+    text-decoration: none;
+    margin-left: 20px;
+    font-family: "filson-pro", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  
+}
+.logo{
+ max-width: 100px;
+float:inline-start;
+margin-left: 10px;
+}
+.content{
+  position: relative;
+  margin-top: 20px;
+  margin-left: 100px;
+ grid-column-start: 1;
+ grid-column-end: 8;
+ grid-row-start: 2;
+ grid-row-end:10;
+  text-align: center;
+}
+h2{
+  color:rgb(72, 94, 118, 100);
+  font-family: "filson-pro", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+ h3{
+  color:rgb(72, 94, 118, 100);
+ }
+footer{
+  background-color:rgb(65,72,51,100) ;
+  color:#f6f6fa;
+  width:100%;
+  text-align: center;
+  grid-column-start: 1;
+  grid-column-end: 12;
+  grid-row-start: 10;
+  grid-row-end: 12;
+  clear:both;
+ 
+}
+footer a{
+  color:#f6f6fa;
+}
