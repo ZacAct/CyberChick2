@@ -27,14 +27,14 @@ padding: 0;
 
 .home-bg {
   width: 100%; 
-  height:600px; 
+  height:400px; 
   display: block; 
   margin:0; 
   padding: 0;
 
 }
 .intro{
-  margin:70px;
+  margin:0 80px 20px 80px
 }
 
 
@@ -45,6 +45,7 @@ body{
     background-size:cover;
     font-family: "filson-pro", sans-serif;
     font-weight: 400;
+    font-size: 15px;
     font-style: normal;
     display: grid;
     grid-template-columns: repeat(6,1fr);
@@ -59,9 +60,10 @@ body{
    grid-column-start: 1;
    grid-column-end: 13;
    grid-row-start: 1;
-   grid-row-end: 1;
-   height:100px;
-   padding-bottom: 60px;
+   grid-row-end: 2;
+   height:80px;
+   margin-bottom: -10px;
+   
    
  
    
@@ -72,13 +74,13 @@ body{
     font-family: "capellina-caps", serif;
     font-weight: 400;
     font-style: normal;
-    font-size: 60px;
+    font-size: 50px;
     color: #f6f6fa;
     text-align: left;
     display: flex;
     float:inline-start;
    
-    margin-top: 25px;
+    margin-top: 30px;
   }
 
 
@@ -86,12 +88,12 @@ body{
     background-color: rgb(65,72,51,100);
     overflow: hidden;
     text-align: right;
-    padding-top: 65px;
+    padding-top: 50px;
     grid-column-start: 1;
-    grid-column-end: 12;
-    grid-row-start: 2;
-    grid-row-end: 2;
-    
+    grid-column-end: 10;
+    grid-row-start: 1;
+    grid-row-end: 1;
+    padding-right: 20px;
     
   }
   
@@ -116,11 +118,11 @@ body{
   font-weight: 400;
   font-size:20px;
   font-style: normal;
-   padding: 0 40px 40px 40px;
+   padding: 0 10px 10px 40px;
 
 }
 .logo{
-max-width: 100px;
+max-width: 80px;
 float:inline-start;
 margin-left: 10px;
 padding:10px;
@@ -141,10 +143,65 @@ h2{
 color:rgb(72, 94, 118, 100);
 font-family: "filson-pro", sans-serif;
 font-weight: 700;
-font-style: italic;
+font-size: 30px;
+font-style:italic;
+
+margin-top: 20px;
+
 }
+.row {
+  display: flex;
+  max-width: 20%;
+ margin-left: 550px;
+ margin-bottom: 20px;
+ 
+}
+
+.column {
+  flex: 15%;
+  padding: 10px;
+  
+}
+
 h3{
 color:rgb(72, 94, 118, 100);
+}
+.row-circle{
+  display: flex;
+  max-width: 50%;
+ margin-left: 350px;
+ margin-top: 20px;
+ justify-content: space-between;
+}
+.container {
+  position: relative;
+  text-align: center;
+  color: white;
+  font-size: 40px;
+  font-family: "capellina-caps", serif;
+  font-weight: 400;
+  font-style: normal;
+ 
+}
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.links{
+  display:flex;
+  width: 150px;
+  height:150px;
+  overflow: hidden;
+  border-radius: 50%;
+  border: 3px solid rgb(72, 94, 118, 100) ;
+  margin: 0 20px 0 20px;
+ 
+  
+}
+.link{
+  color: #f6f6fa;
 }
 footer{
 background-color:rgb(65,72,51,100) ;
