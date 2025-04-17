@@ -35,6 +35,7 @@ header.primary {
   grid-template-columns: auto 1fr auto;
   align-items: center;
   padding: 0 20px;
+  margin-bottom:-10px;
   background-color: rgb(65, 72, 51, 1);
   height: 100px;
   grid-column: 1 / -1;
@@ -47,6 +48,7 @@ header.primary h1 {
   font-size: 50px;
   color: #f6f6fa;
  margin-right: 20px;
+ margin-left: 20px;
   max-width: 400px;
   
 }
@@ -93,15 +95,31 @@ h2.title {
   text-align: center;
   font-size: 100px;
   background-color: rgba(0, 0, 0, 0.5);
+  margin-top:120px;
+  padding: 30px;
+  border-radius: 10px;
+}
+h2.cabin-title {
+  font-family: "Caveat", cursive;
+  font-weight: 700;
+  position:absolute;
+  z-index: 2;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -90%);
+  color: #f6f6fa;
+  text-align: center;
+  font-size: 100px;
+  background-color: rgba(0, 0, 0, 0.5);
+  margin-top:120px;
   padding: 30px;
   border-radius: 10px;
 }
 
-
 .tag {
   text-align: center;
   margin-top: 50px;
-  margin-left: auto;
+  margin-left: 400px;
   margin-right: auto;
   padding: 20px;
   border: 3px solid #485E76;
@@ -110,7 +128,18 @@ h2.title {
   display: inline-block;
   color: white;
 }
-
+.cabin-tag{
+  text-align: center;
+  margin-top: 50px;
+  margin-left: 300px;
+  margin-right: auto;
+  padding: 20px;
+  border: 3px solid #485E76;
+  background-color: #485E76;
+  border-radius: 25px;
+  display: inline-block;
+  color: white;
+}
 
 .content {
   width: 100%;
@@ -131,9 +160,11 @@ h3.owners {
 }
 
 .intro {
-  margin: 100px 80px 20px 80px;
+  margin: 100px 80px 60px 80px;
 }
-
+.cabin-intro{
+  margin: 40px 80px 20px 80px;
+}
 
 .home-bg,
 .cabin-bg {
@@ -147,7 +178,7 @@ h3.owners {
 }
 
 .cabin-bg {
-  margin-top: 50px;
+  height:800px;
 }
 
 hr {
@@ -167,8 +198,41 @@ h2 {
   font-style: italic;
   margin-top: 20px;
 }
+.widget{
+  display:inline-block;
+  margin:20px;
 
-
+}
+.night{
+  
+  text-shadow:2px 2px #79828c;
+  color:rgb(65, 72, 51, 1);
+}
+.week{
+    
+  text-shadow:2px 2px #79828c;
+  color:rgb(65, 72, 51, 1);
+}
+.price{
+  color:rgba(72, 94, 118, 1);
+}
+.included{
+  margin-left:80px;
+  margin-bottom: 50px;
+}
+.items{
+float:left;
+width:50%;
+}
+.included:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.feature{
+  text-align:center;
+  margin-bottom:100px;
+}
 .row {
   display: flex;
   flex-wrap: wrap;
@@ -179,6 +243,10 @@ h2 {
 .column {
   flex: 1 1 20%;
   padding: 10px;
+ 
+}
+.own{
+  margin-left:450px;
 }
 
 .boss {
@@ -194,9 +262,17 @@ h2 {
 .row-circle {
   display: flex;
   max-width: 50%;
-  margin: 20px auto;
+  margin-left:-50px;
   justify-content: space-between;
 }
+.row-circle2 {
+  display: flex;
+  max-width: 50%;
+  margin-left:500px;
+  margin-top:20px;
+ 
+}
+
 
 .container {
   position: relative;
