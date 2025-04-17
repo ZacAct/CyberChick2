@@ -5,14 +5,14 @@ html {
   box-sizing: inherit;
 }
 .content{
-  width: 100%;
+  width:100%;
   padding: 0;
   margin:0;
   grid-column-start: 1;
   grid-column-end: 13;
   grid-row-start: 2;
   grid-row-end:10;
-  text-align: center; 
+  text-align: left; 
 
   }
 
@@ -128,8 +128,19 @@ margin-left: 10px;
 padding:10px;
 }
 
+.content h3{
+  color:#755d33;
+  font-size: 25px; 
+  text-align: left;
+  margin: 20px 0;
+}
 
-
+h3.owners{
+  color:#755d33;
+  font-size: 25px; 
+  text-align: center;
+  margin: 20px 0;
+}
 
 hr {
 display: block;
@@ -163,9 +174,18 @@ margin-top: 20px;
   
 }
 
-h3{
-color:rgb(72, 94, 118, 100);
+.column h3{
 }
+
+.boss {
+  background-color: red;
+  width: 100%;
+  height: auto;
+  display: block;
+  margin:0;
+  padding:0;
+}
+
 .row-circle{
   display: flex;
   max-width: 50%;
