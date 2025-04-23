@@ -77,6 +77,21 @@ header.primary h1 {
   font-size: 18px;
 }
 
+
+.now:link, .now:visited{
+  background-color:rgba(72, 94, 118, 1) ;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius:5px;
+  margin:-10px;
+  
+}
+.now:hover, .now:active {
+  background-color:rgb(105, 136, 170);
+}
 .logo {
   max-width: 80px;
   height: auto;
@@ -88,16 +103,16 @@ h2.title {
   font-weight: 700;
   position: absolute;
   z-index: 2;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -90%);
+  
   color: #f6f6fa;
   text-align: center;
-  font-size: 100px;
-  background-color: rgba(0, 0, 0, 0.5);
-  margin-top:120px;
+  font-size: 80px;
+ 
+  text-shadow: 3px 3px rgb(39, 43, 31);
+  margin-top:-420px;
+  margin-left: 330px;
   padding: 30px;
-  border-radius: 10px;
+  clear:both;
 }
 h2.cabin-title {
   font-family: "Caveat", cursive;
@@ -110,7 +125,7 @@ h2.cabin-title {
   color: #f6f6fa;
   text-align: center;
   font-size: 100px;
-  background-color: rgba(0, 0, 0, 0.5);
+  text-shadow: 2px 2px rgb(39, 43, 31) ;
   margin-top:120px;
   padding: 30px;
   border-radius: 10px;
@@ -119,7 +134,7 @@ h2.cabin-title {
 .tag {
   text-align: center;
   margin-top: 50px;
-  margin-left: 400px;
+  margin-left: 470px;
   margin-right: auto;
   padding: 20px;
   border: 3px solid #485E76;
@@ -189,7 +204,54 @@ hr {
   margin: 1em 0;
   padding: 0;
 }
+.carousel3d-container {
+  perspective: 1000px;
+  width: 400px;
+  height: 300px;
+  margin: 50px auto;
+  position: relative;
+}
 
+.carousel3d {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: transform 1s;
+}
+
+.carousel3d img {
+  position: absolute;
+  width: 250px;
+  height: 150px;
+  left: 75px;
+  top: 75px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+  transition: transform 0.5s;
+}
+
+.nav-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  font-size: 2rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.nav-button.prev {
+  left: -60px; 
+}
+
+.nav-button.next {
+  right: -60px; 
+}
 h2 {
   color: rgba(72, 94, 118, 1);
   font-family: "filson-pro", sans-serif;
@@ -198,6 +260,7 @@ h2 {
   font-style: italic;
   margin-top: 20px;
 }
+
 .widget{
   display:inline-block;
   margin:20px;
@@ -216,9 +279,24 @@ h2 {
 .price{
   color:rgba(72, 94, 118, 1);
 }
+
+.book:link, .book:visited{
+  background-color:rgb(65, 72, 51, 1) ;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin-left:730px;
+  border-radius:5px;
+}
+.book:hover, .book:active {
+  background-color:rgb(103, 113, 81);
+}
 .included{
   margin-left:80px;
   margin-bottom: 50px;
+  text-decoration: none;
 }
 .items{
 float:left;
@@ -272,6 +350,8 @@ width:50%;
   margin-top:20px;
  
 }
+
+
 
 
 .container {
@@ -343,7 +423,23 @@ footer a {
   header.container {
     max-width: 900px;
   }
+  .carousel3d-container {
+    max-width: 90%;
+    height: 250px;
+  }
+
+  .carousel3d img {
+    width: 200px;
+    height: 120px;
+  }
+
+  .nav-button {
+    width: 30px;
+    height: 50px;
+    font-size: 1.5rem;
+  }
 }
+
 
 @media screen and (min-width: 992px) {
   .row {

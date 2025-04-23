@@ -24,15 +24,15 @@
          
                     
                <h1>Buffalo's Edge Retreat</h1> 
-               <nav class="navbar"> 
+               <nav class="navbar">
                 <ul>
                   <li><a href="index.html">Home</a></li>
                   <li><a href="cabin.html">Cabins</a></li>
-                  <li><a href="rental.html">Rentals</a></li>
-                  <li><a href="river.html">River</a></li>
-                  <li><a href="soon.html">Coming Soon</a></li>
+                  <li><a href="rental.html">Canoes</a></li>
+                  <li><a href="river.html">River Conditions</a></li>
+                  <li><a href="booking.html" class="now"> Book Now</a></li>
                 </ul>
-          </nav> 
+              </nav>
         </header>
     
 <div class="content">
@@ -49,6 +49,20 @@
  
 
   <hr>
+
+  <div class="carousel3d-container">
+    <button class="nav-button prev" onclick="rotateCarousel(-1)">‹</button>
+    
+    <div class="carousel3d" id="carousel3d">
+      <img src="assets/img/bear-ridge-1.jpg" alt="Cabin" />
+      <img src="assets/img/bear-ridge-2.jpg" alt="Patio" />
+      <img src="assets/img/bear-ridge-3.jpg" alt="Bedroom" />
+      <img src="assets/img/bear-ridge-4.jpg" alt="Living Room" />
+      <img src="assets/img/bear-ridge-5.jpg" alt="Kitchen" />
+    </div>
+  
+    <button class="nav-button next" onclick="rotateCarousel(1)">›</button>
+  </div>
   <h3>Rates</h3>
   <aside role="complementary">
     <div class="container">
@@ -65,7 +79,7 @@
         <p class="price">$1195</p>
         </aside>
       </article>
-    <h3>Booking</h3>
+      <a href="booking.html" target="_blank" class="book">Book Now</a>
     <hr>
     <h3>What's Included:</h3>
     <div class="included">
@@ -93,7 +107,7 @@
       </div>
     </div>
 <h3 >New Feature Coming Soon!</h3>
-<p class="feature">Enjoy a private riverside seating area --- the perfect place for coffee or quite reflection (coming soon!)</p>
+<p class="feature">Enjoy a private riverside seating area --- the perfect place for coffee or quiet reflection (coming soon!)</p>
 <div class="row-circle2">
   <div class="container">
     <a class="link" href="cabins.html">
@@ -118,7 +132,7 @@
    <footer id="colophon" role="contentinfo">
 <h6> &copy; 2025 Bufflao's Edge Retreat |  <a href="mailto: info@buffalosedge.com">info@buffalosedge.com</a> | <a href="#top">Back To Top</a></h6> 
   </footer>
-  
+  <script src="assets/script/script.js"></script>
 </body>
 
 </html>
