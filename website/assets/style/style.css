@@ -1,4 +1,3 @@
-
 html {
   box-sizing: border-box;
 }
@@ -29,33 +28,27 @@ img {
   padding: 0;
 }
 
-
 header.primary {
-  display: grid;
-  grid-template-columns: auto 1fr auto;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
   padding: 0 20px;
-  margin-bottom:-10px;
-  background-color: rgb(65, 72, 51, 1);
-  height: 100px;
+  background-color: rgb(65, 72, 51);
   grid-column: 1 / -1;
-  
+  margin: 0;
 }
+
 
 header.primary h1 {
   font-family: "capellina-caps", serif;
-  font-weight: 400;
   font-size: 50px;
   color: #f6f6fa;
- margin-right: 20px;
- margin-left: 20px;
-  max-width: 400px;
-  
+  margin: 0 20px;
 }
 
 .navbar {
   background-color: transparent;
-  
+  margin-top: 30px;
 }
 
 .navbar ul {
@@ -65,7 +58,6 @@ header.primary h1 {
   padding: 0;
   list-style: none;
 }
-
 .navbar li {
   list-style-type: none;
 }
@@ -86,7 +78,8 @@ header.primary h1 {
   text-decoration: none;
   display: inline-block;
   border-radius:5px;
-  margin:-10px;
+  margin-top: -10px;
+  
   
 }
 .now:hover, .now:active {
@@ -102,57 +95,58 @@ h2.title {
   font-family: "Caveat", cursive;
   font-weight: 700;
   position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   z-index: 2;
-  
   color: #f6f6fa;
   text-align: center;
   font-size: 80px;
- 
   text-shadow: 3px 3px rgb(39, 43, 31);
-  margin-top:-420px;
-  margin-left: 330px;
   padding: 30px;
-  clear:both;
+  width: 100%;
+  max-width: 100%;
+  white-space: normal;
+  box-sizing: border-box;
 }
 h2.cabin-title {
   font-family: "Caveat", cursive;
   font-weight: 700;
-  position:absolute;
-  z-index: 2;
-  top: 60%;
+  position: absolute;
+  top: 50%;
   left: 50%;
-  transform: translate(-50%, -90%);
+  transform: translate(-50%, -50%);
+  z-index: 2;
   color: #f6f6fa;
   text-align: center;
-  font-size: 100px;
-  text-shadow: 2px 2px rgb(39, 43, 31) ;
-  margin-top:120px;
+  font-size: 80px;
+  text-shadow: 3px 3px rgb(39, 43, 31);
   padding: 30px;
-  border-radius: 10px;
+  max-width: 90%;
 }
 
+
 .tag {
-  text-align: center;
-  margin-top: 50px;
-  margin-left: 470px;
-  margin-right: auto;
+  display: block;
+  margin: 40px auto; 
   padding: 20px;
+  max-width: 500px; 
+  text-align: center;
   border: 3px solid #485E76;
   background-color: #485E76;
   border-radius: 25px;
-  display: inline-block;
   color: white;
+
 }
 .cabin-tag{
-  text-align: center;
-  margin-top: 50px;
-  margin-left: 300px;
-  margin-right: auto;
+  display: block; 
+  margin: 40px auto; 
   padding: 20px;
+  max-width: 500px; 
+  text-align: center;
   border: 3px solid #485E76;
   background-color: #485E76;
   border-radius: 25px;
-  display: inline-block;
   color: white;
 }
 
@@ -180,21 +174,18 @@ h3.owners {
 .cabin-intro{
   margin: 40px 80px 20px 80px;
 }
-
-.home-bg,
-.cabin-bg {
+.hero {
+  position: relative;
   width: 100%;
   height: 600px;
-  display: block;
-  position: relative;
-  z-index: 1;
-  margin: 0;
-  padding: 0;
+  margin-top:-10px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
-.cabin-bg {
-  height:800px;
-}
+
+
 
 hr {
   display: block;
@@ -205,11 +196,12 @@ hr {
   padding: 0;
 }
 .carousel3d-container {
-  perspective: 1000px;
-  width: 400px;
-  height: 300px;
-  margin: 50px auto;
   position: relative;
+  height: 400px; 
+  max-width: 800px;
+  margin: 0 auto 100px auto;
+  padding: 0 20px;
+  overflow: visible;
 }
 
 .carousel3d {
@@ -222,13 +214,13 @@ hr {
 
 .carousel3d img {
   position: absolute;
-  width: 250px;
-  height: 150px;
-  left: 75px;
-  top: 75px;
+  width: 800px;           
+  height: 300px;        
+  left: 250px;         
+  top: 100px;           
   object-fit: cover;
   border-radius: 10px;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4); 
   transition: transform 0.5s;
 }
 
@@ -246,11 +238,11 @@ hr {
 }
 
 .nav-button.prev {
-  left: -60px; 
+  left: 10px;
 }
 
 .nav-button.next {
-  right: -60px; 
+  right: 10px;
 }
 h2 {
   color: rgba(72, 94, 118, 1);
@@ -266,32 +258,69 @@ h2 {
   margin:20px;
 
 }
+.rates{
+text-align: center;
+ background-image: url(https://images.unsplash.com/photo-1536259450465-9e7813c64526?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+ background-size: 100%;
+ width: 90%;
+ max-width: 500px;
+ margin: 0 auto 20px auto;
+ border-radius: 5%;
+}
 .night{
   
-  text-shadow:2px 2px #79828c;
+  text-shadow:2px 2px #f6f9fb ;
   color:rgb(65, 72, 51, 1);
 }
 .week{
     
-  text-shadow:2px 2px #79828c;
+  text-shadow:2px 2px #f6f9fb;
   color:rgb(65, 72, 51, 1);
 }
 .price{
-  color:rgba(72, 94, 118, 1);
+  text-shadow: 2px 2px #485E76;
+  color:#f6f6fa;
+  font-size: 40px;
+}
+.canoe{
+  text-align: center;
+  text-shadow: 2px 2px #485E76;
+  color:#f6f6fa;
+  font-size: 30px;
 }
 
+.shuttle{
+  color: #755d33;
+  font-size: 25px;
+  text-align: center;
+  margin: 20px;
+}
 .book:link, .book:visited{
   background-color:rgb(65, 72, 51, 1) ;
   color: white;
   padding: 14px 25px;
   text-align: center;
   text-decoration: none;
-  display: inline-block;
-  margin-left:730px;
-  border-radius:5px;
+  margin: 20px auto;
+  display: block;
+  width: fit-content;
+  border-radius:5%;
+
 }
 .book:hover, .book:active {
   background-color:rgb(103, 113, 81);
+}
+.table{
+  margin-left: auto;
+  margin-right: auto;
+ margin-bottom: 200px;
+ 
+}
+th,td{
+ padding:10px;
+}
+table, th, td {
+  border: 2px solid rgb(65, 72, 51, 1);
 }
 .included{
   margin-left:80px;
@@ -340,18 +369,114 @@ width:50%;
 .row-circle {
   display: flex;
   max-width: 50%;
-  margin-left:-50px;
-  justify-content: space-between;
+  margin-left:450px;
+  margin-top:100px;
 }
 .row-circle2 {
   display: flex;
   max-width: 50%;
-  margin-left:500px;
+  margin-left:450px;
   margin-top:20px;
  
 }
 
+.accordion .accordion-item {
+  border-bottom: 1px solid #e5e5e5;
+}
 
+.accordion .accordion-item button[aria-expanded='true'] {
+  border-bottom: 1px solid #03b5d2;
+}
+
+.accordion button {
+  position: relative;
+  display: block;
+  text-align: left;
+  width: 100%;
+  padding: 1em 0;
+  color: #7288a2;
+  font-family: "filson-pro", sans-serif;
+  font-size: 1.15rem;
+  font-weight: 400;
+  border: none;
+  background: none;
+  outline: none;
+}
+
+.accordion button:hover,
+.accordion button:focus {
+  cursor: pointer;
+  color: #03b5d2;
+}
+
+.accordion button:hover::after,
+.accordion button:focus::after {
+  cursor: pointer;
+  color: #03b5d2;
+  border: 1px solid #03b5d2;
+}
+
+.accordion button .accordion-title {
+  padding: 1em 1.5em 1em 0;
+}
+
+.accordion button .icon {
+  display: inline-block;
+  position: absolute;
+  top: 18px;
+  right: 0;
+  width: 22px;
+  height: 22px;
+  border: 1px solid;
+  border-radius: 22px;
+}
+
+.accordion button .icon::before {
+  display: block;
+  position: absolute;
+  content: '';
+  top: 9px;
+  left: 5px;
+  width: 10px;
+  height: 2px;
+  background: currentColor;
+}
+.accordion button .icon::after {
+  display: block;
+  position: absolute;
+  content: '';
+  top: 5px;
+  left: 9px;
+  width: 2px;
+  height: 10px;
+  background: currentColor;
+}
+
+.accordion button[aria-expanded='true'] {
+  color: #03b5d2;
+}
+.accordion button[aria-expanded='true'] .icon::after {
+  width: 0;
+}
+.accordion button[aria-expanded='true'] + .accordion-content {
+  opacity: 1;
+  max-height: 9em;
+  transition: all 200ms linear;
+  will-change: opacity, max-height;
+}
+.accordion .accordion-content {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 200ms linear, max-height 200ms linear;
+  will-change: opacity, max-height;
+}
+.accordion .accordion-content p {
+  font-family: "filson-pro", sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+  margin: 2em 0;
+}
 
 
 .container {
@@ -407,9 +532,154 @@ footer {
 footer a {
   color: #f6f6fa;
 }
+@media screen and (max-width: 767px) {
+  .logo {
+    max-width: 60px;
+    margin: 0 auto;
+  }
+  header.primary {
+    grid-template-columns: 1fr;
+    height: auto;
+    padding: 10px;
+    text-align: center;
+  }
 
+  header.primary h1 {
+    font-size: 28px;
+    max-width: 100%;
+    margin: 10px auto;
+  }
+
+
+  .navbar {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navbar.open {
+    display: flex;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  .navbar li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .navbar a {
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+  }
+
+  .now {
+    margin-top: 10px;
+  }
+
+
+  .now:link, .now:visited {
+    background-color: rgba(72, 94, 118, 1);
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 5px;
+    margin: 0;
+    font-size: 16px;
+  }
+  h2.title {
+    position: static;
+    transform: none;
+    font-size: 36px;
+    padding: 20px;
+    margin: 0 auto;
+    text-align: center;
+    
+  }
+  .carousel3d-container {
+    height: auto;
+    padding: 0;
+  }
+
+  .carousel3d img {
+    position: static;
+    width: 100%;
+    height: auto;
+  }
+
+  .nav-button.prev, .nav-button.next {
+    position: static;
+    margin: 10px auto;
+    display: block;
+  }
+  .nav-button {
+    position: absolute;
+    top: 40%;
+    font-size: 1.5rem;
+    padding: 0.25rem 0.75rem;
+  }
+
+  .nav-button.prev {
+    left: 5px;
+  }
+
+  .nav-button.next {
+    right: 5px;}
+
+  h2.title,
+  h2.cabin-title {
+    font-size: 36px;
+    position: static;
+    margin: 20px auto;
+    transform: none;
+    text-align: center;
+  }
+
+  .intro,
+  .cabin-intro {
+    margin: 20px;
+  }
+
+  .items {
+    float: none;
+    width: 100%;
+  }
+
+  .included {
+    margin: 0 20px 50px 20px;
+  }
+
+  .row-circle,
+.row-circle2 {
+  flex-direction: column;
+  align-items: center;
+  margin: 20px auto;
+  max-width: 100%;
+}
+
+  .own {
+    margin: 0 auto;
+    text-align: center;
+  }  
+  .tag {
+    margin: 40px 0 ;
+    max-width: 80%;
+    
+  }
+}
 
 @media screen and (min-width: 768px) {
+
   .row {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -424,20 +694,29 @@ footer a {
     max-width: 900px;
   }
   .carousel3d-container {
-    max-width: 90%;
-    height: 250px;
+    max-width: 800px;
+    height: 400px;
   }
 
   .carousel3d img {
-    width: 200px;
-    height: 120px;
+    width: 400px;
+    height: 300px;
+    left: 180px;
+    top: 100px;
   }
-
   .nav-button {
     width: 30px;
     height: 50px;
     font-size: 1.5rem;
   }
+
+  .row-circle,
+  .row-circle2 {
+    margin: 40px auto;
+    justify-content: center;
+    max-width: 90%;
+  }
+
 }
 
 

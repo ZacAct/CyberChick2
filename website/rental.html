@@ -2,128 +2,229 @@
 <html lang="en">
 
 <head>
-  <title>Buffalo's Edge Retreat</title>
   <meta charset="UTF-8" />
-  <meta name="description" content="Keyword rich narrative on site purpose" />
+  <title>Buffalo's Edge Retreat</title>
+  <meta name="description" content="Buffalo's Edge Retreat cabin and canoe rentals" />
   <meta name="author" content="Cassandra Helmick" />
-  <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://use.typekit.net/sda3rnl.css">
+  
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Sigmar&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/style/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Sigmar&family=Space+Grotesk:wght@<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://use.typekit.net/sda3rnl.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="assets/style/style.css">
+
+  <link rel="icon" href="assets/img/buffalo-logo.svg" type="image/svg+xml">
 </head>
 
 <body>
 
   <header role="banner" class="primary">
-    <img class="logo" src="assets/img/buffalo-logo.svg" alt="Buffalo's Edge Logo">
+    <img src="assets/img/buffalo-logo.svg" alt="Buffalo's Edge Retreat Logo" class="logo">
     <h1>Buffalo's Edge Retreat</h1>
+   
+
     <nav class="navbar">
+    
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="cabin.html">Cabins</a></li>
-        <li><a href="rental.html">Rentals</a></li>
-        <li><a href="river.html">River</a></li>
-        <li><a href="soon.html">Coming Soon</a></li>
+        <li><a href="rental.html">Canoes</a></li>
+        <li><a href="river.html">River Conditions</a></li>
+        <li><a href="booking.html" class="now"> Book Now</a></li>
       </ul>
+   
     </nav>
   </header>
 
   <div class="content">
-    <img src="assets/img/bear-ridge-1.jpg" class="cabin-bg" alt="Cabin background image">
-    <h2 class="cabin-title">CANOES</h2>
-    <h2 class="cabin-tag">Explore the Waters with Our Canoe Rentals! </h2>
-    <br>
-    <h3>Canoes</h3>
-    <section class="cabin-intro">
+    <div class="hero" style="background-image: url('assets/img/buffalo.home.jpg');">
+      <h2 class="title">CANOES </h2>
+    </div>
+
+    <h2 class="tag">Explore the Waters with Our Canoe Rentals! </h2>
+
+    <section class="intro">
+      <h3>Canoes</h3>
       <p>There's nothing like spending a day on the water, and our canoes make it easy to enjoy every minute of it. Discover the perfect way to explore the outdoors with our high-quality canoes. Whether you're planning a relaxing paddle or a full day of exploring, our canoes are built for durability, stability, and comfort. Built tough and easy to handle, they’re great for beginners and experienced paddlers.</p>
       <p>Scroll down for prices, rental info, and details about our shuttle service.</p>
       <p>Feel free to explore more about our canoes by clicking the link below.</p>
       <p><a href="https://buffalocanoemanufacturing.com/buffalo-canoes" target="_blank">Buffalo Canoe Manufacturing</a></p>
+
+      <hr>
+
+      <div class="carousel3d-container">
+        <button class="nav-button prev" onclick="rotateCarousel(-1)">‹</button>
+        
+        <div class="carousel3d" id="carousel3d">
+          <img src="assets/img/bear-ridge-1.jpg" alt="Cabin" />
+          <img src="assets/img/bear-ridge-2.jpg" alt="Patio" />
+          <img src="assets/img/bear-ridge-3.jpg" alt="Bedroom" />
+          <img src="assets/img/bear-ridge-4.jpg" alt="Living Room" />
+          <img src="assets/img/bear-ridge-5.jpg" alt="Kitchen" />
+        </div>
+      
+        <button class="nav-button next" onclick="rotateCarousel(1)">›</button>
+      </div>
+      <h3 class="rental">Rental Fee</h3>
+      <p class="canoe">$64 per canoe</p>
+      <a href="booking.html" target="_blank" class="book">Book Now</a>
+      <hr>
+      <h3 class="shuttle">Shuttles</h3>
+      <p>Need a ride? We offer shuttle services to various put-in and take-out spots along the river. Shuttle pricing is separate from canoe rentals and covers one vehicle. To figure out how far you’ll float and how long it might take, check out this helpful guide: <a href="https://www.nps.gov/buff/planyourvisit/river-accesses-mileage.htm" target="_blank">River access mileage</a>.</p>
+  
+      <h3>Shuttle Rates From Ponca</h3>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Destination</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Steel Creek</td>
+            <td>$21.00</td>
+          </tr>
+          <tr>
+            <td>Kyles</td>
+            <td>$40.00</td>
+          </tr>
+          <tr>
+            <td>Pruitt (or Kyles to Pruitt)</td>
+            <td>$55.00</td>
+          </tr>
+          <tr>
+            <td>Ozark</td>
+            <td>$61.00</td>
+          </tr>
+          <tr>
+            <td>Erbie</td>
+            <td>$92.00</td>
+          </tr>
+          <tr>
+            <td>Hasty</td>
+            <td>$55.00</td>
+          </tr>
+          <tr>
+            <td>Hwy 123 (Carver)</td>
+            <td>$65.00</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="container">
+        <h2>FAQs</h2>
+        <h3>Got questions? We've got answers.</h3>
+        <div class="accordion">
+          <div class="accordion-item">
+            <button id="accordion-button-1" aria-expanded="false">
+              <span class="accordion-title">What's included with a canoe rental?</span>
+              <span class="icon" aria-hidden="true"></span>
+            </button>
+            <div class="accordion-content">
+              <p>
+                Each canoe rental includes paddles, life jackets (PFDs), and a mesh trash bag to help keep the river clean. Everything you need for a safe and enjoyable float is included!
+              </p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button id="accordion-button-2" aria-expanded="false">
+              <span class="accordion-title">Do I need any experience to rent a canoe?</span>
+              <span class="icon" aria-hidden="true"></span>
+            </button>
+            <div class="accordion-content">
+              <p>
+               No prior experience is needed! Our routes are beginner-friendly, and we'll provide basic instructions before you head out.
+              </p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button id="accordion-button-3" aria-expanded="false">
+              <span class="accordion-title"> Is there an age limit for canoe rentals?</span>
+              <span class="icon" aria-hidden="true"></span>
+            </button>
+            <div class="accordion-content">
+              <p>
+           Children are welcome to ride along with adults. However, participants under 18 must be accompanied by a parent or guardian.
+              </p>
+            </div>
+          </div>
+           <div class="accordion-item">
+            <button id="accordion-button-3" aria-expanded="false">
+              <span class="accordion-title"> Do you rent gear like dry bags or coolers?</span>
+              <span class="icon" aria-hidden="true"></span>
+            </button>
+            <div class="accordion-content">
+              <p>
+           At this time, we do not rent additional gear. You're welcome to bring your own dry bags, coolers, or other float gear.
+              </p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button id="accordion-button-3" aria-expanded="false">
+              <span class="accordion-title"> When are the quiet hours?</span>
+              <span class="icon" aria-hidden="true"></span>
+            </button>
+            <div class="accordion-content">
+              <p>
+          Quiet hours are between the hours of 10:30 p.m. and 7:00 a.m. 
+              </p>
+            </div>
+          </div>
+           <div class="accordion-item">
+            <button id="accordion-button-3" aria-expanded="false">
+              <span class="accordion-title"> What should I bring for a canoe trip?</span>
+              <span class="icon" aria-hidden="true"></span>
+            </button>
+            <div class="accordion-content">
+              <p> We recommend bringing the following: Sunscreen, Bug spray, Towels, Dry clothes, Old tennis shoes or water shoes, Plenty to eat and drink, Life vests (two are included with each canoe rental).
+              </p>
+            </div>
+          </div><div class="accordion-item">
+            <button id="accordion-button-3" aria-expanded="false">
+              <span class="accordion-title"> What should I not bring on the river?</span>
+              <span class="icon" aria-hidden="true"></span>
+            </button>
+            <div class="accordion-content">
+              <p> Please avoid bringing the following items: Glass containers, Styrofoam coolers, No firearms (on premises or in canoes), No alcoholic beverages (prohibited by law).
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+     
+      <div class="row-circle">
+        <div class="container">
+          <a class="link" href="cabins.html">
+            <img src="assets/img/bear-ridge-1.jpg" alt="Bear Ridge Cabin exterior" class="links" loading="lazy">
+            <div class="center">Cabins</div>
+          </a>
+        </div>
+        <div class="container">
+          <a class="link" href="canoes.html">
+            <img src="assets/img/person-canoe.jpg" alt="Person paddling a canoe" class="links" loading="lazy">
+            <div class="center">Canoes</div>
+          </a>
+        </div>
+        <div class="container">
+          <a class="link" href="river.html">
+            <img src="assets/img/dirty-river.jpg" alt="Rafts floating on the river" class="links" loading="lazy">
+            <div class="center">River</div>
+          </a>
+        </div>
+      </div>
     </section>
 
-    <hr>
-
-    <h3>Daily Renting</h3>
-    <h4>$64 per canoe</h4>
-    <div class="content">
-      <img src="assets/img/person-canoe.jpg" class="cabin-bg" alt="Person in a canoe">
-    </div>
-
-    <h4>Renting</h4>
-    <hr>
-
-    <h3>Shuttling</h3>
-    <p>Need a ride? We offer shuttle services to various put-in and take-out spots along the river. Shuttle pricing is separate from canoe rentals and covers one vehicle. To figure out how far you’ll float and how long it might take, check out this helpful guide: <a href="https://www.nps.gov/buff/planyourvisit/river-accesses-mileage.htm" target="_blank">River access mileage</a>.</p>
-
-    <h3>Shuttle Rates From Ponca</h3>
-    <table border="2">
-      <thead>
-        <tr>
-          <th>Destination</th>
-          <th>Price</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Steel Creek</td>
-          <td>$21.00</td>
-        </tr>
-        <tr>
-          <td>Kyles</td>
-          <td>$40.00</td>
-        </tr>
-        <tr>
-          <td>Pruitt (or Kyles to Pruitt)</td>
-          <td>$55.00</td>
-        </tr>
-        <tr>
-          <td>Ozark</td>
-          <td>$61.00</td>
-        </tr>
-        <tr>
-          <td>Erbie</td>
-          <td>$92.00</td>
-        </tr>
-        <tr>
-          <td>Hasty</td>
-          <td>$55.00</td>
-        </tr>
-        <tr>
-          <td>Hwy 123 (Carver)</td>
-          <td>$65.00</td>
-        </tr>
-      </tbody>
-    </table>
-
-    <hr>
-
-    <div class="row-circle2">
-      <div class="container">
-        <a class="link" href="cabins.html">
-          <img src="assets/img/bear-ridge-1.jpg" alt="Bear Ridge Cabin exterior" class="links" loading="lazy">
-          <div class="center">Cabins</div>
-        </a>
-      </div>
-      <div class="container">
-        <a class="link" href="canoes.html">
-          <img src="assets/img/person-canoe.jpg" alt="Person paddling a canoe" class="links" loading="lazy">
-          <div class="center">Canoes</div>
-        </a>
-      </div>
-      <div class="container">
-        <a class="link" href="river.html">
-          <img src="assets/img/dirty-river.jpg" alt="Rafts floating on the river" class="links" loading="lazy">
-          <div class="center">River</div>
-        </a>
-      </div>
-    </div>
   </div>
 
+<script src="assets/script/script.js"></script>
   <footer id="colophon" role="contentinfo">
     <h6>&copy; 2025 Buffalo's Edge Retreat | <a href="mailto:info@buffalosedge.com">info@buffalosedge.com</a> | <a href="#top">Back To Top</a></h6>
   </footer>
 
+
 </body>
+
 </html>
