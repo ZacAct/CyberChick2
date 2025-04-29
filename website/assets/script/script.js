@@ -15,7 +15,8 @@ if (carousel) {
     carousel.style.transform = `rotateY(${currAngle}deg)`;
   }
 
-  window.rotateCarousel = rotateCarousel; // Expose to global
+  window.rotateCarousel = rotateCarousel; 
+  
 }
 
 // --- Accordion Section (leave as-is) ---
@@ -142,3 +143,110 @@ if (fetchDataButton) {
       });
   });
 }
+//Calendar Section//
+
+document.addEventListener('DOMContentLoaded', () => {
+  let currentMonth = new Date().getMonth();
+  let currentYear = new Date().getFullYear();
+  let selectedDates = new Set();
+
+  const monthYearElement = document.getElementById('month-year');
+  const calendarElement = document.getElementById('calendar');
+  const priceDisplay = document.getElementById('price-display');
+
+  function updateCalendarHeader() {
+    const monthNames = [
+      'January', 'February', 'March', 'April', 'May', 'June',
+      'July', 'August', 'September', 'October', 'November', 'December'
+    ];
+    monthYearElement.textContent = `${monthNames[currentMonth]} ${currentYear}`;
+  }
+
+  function handleDateClick(event) {
+    const dayCell = event.target;
+    const day = dayCell.dataset.day;
+    const key = `${currentYear}-${currentMonth}-${day}`;
+
+    if (dayCell.classList.contains('past')) return;
+
+    if (dayCell.classList.contains('selected')) {
+      dayCell.classList.remove('selected');
+      selectedDates.delete(key);
+    } else {
+      dayCell.classList.add('selected');
+      selectedDates.add(key);
+    }
+
+    updatePrice();
+  }
+
+  function updatePrice() {
+    const totalPrice = selectedDates.size * 67;
+    priceDisplay.textContent = `Total Price: $${totalPrice}`;
+  }
+
+  function generateCalendar() {
+    calendarElement.innerHTML = '';
+
+    const today = new Date();
+    const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
+    const firstDay = new Date(currentYear, currentMonth, 1).getDay();
+
+    const daysOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+    daysOfWeek.forEach(day => {
+      const header = document.createElement('div');
+      header.classList.add('header');
+      header.textContent = day;
+      calendarElement.appendChild(header);
+    });
+
+    for (let i = 0; i < firstDay; i++) {
+      const emptyCell = document.createElement('div');
+      calendarElement.appendChild(emptyCell);
+    }
+
+    for (let day = 1; day <= daysInMonth; day++) {
+      const dayCell = document.createElement('div');
+      dayCell.textContent = day;
+      dayCell.dataset.day = day;
+
+      const cellDate = new Date(currentYear, currentMonth, day);
+      const todayDate = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+
+      if (cellDate < todayDate) {
+        dayCell.classList.add('past');
+        dayCell.textContent = `${day} ❌`;
+      }
+
+      const key = `${currentYear}-${currentMonth}-${day}`;
+      if (selectedDates.has(key)) {
+        dayCell.classList.add('selected');
+      }
+
+      dayCell.addEventListener('click', handleDateClick);
+      calendarElement.appendChild(dayCell);
+    }
+
+    updateCalendarHeader();
+  }
+
+  document.getElementById('prev-month').addEventListener('click', () => {
+    currentMonth--;
+    if (currentMonth < 0) {
+      currentMonth = 11;
+      currentYear--;
+    }
+    generateCalendar();
+  });
+
+  document.getElementById('next-month').addEventListener('click', () => {
+    currentMonth++;
+    if (currentMonth > 11) {
+      currentMonth = 0;
+      currentYear++;
+    }
+    generateCalendar();
+  });
+
+  generateCalendar();
+});

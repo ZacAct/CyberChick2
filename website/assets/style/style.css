@@ -365,7 +365,15 @@ width:50%;
   margin-bottom: 200px;
   padding: 0;
 }
-
+.river{
+  color: rgba(72, 94, 118, 1);
+  font-family: "filson-pro", sans-serif;
+  font-weight: 700;
+  font-size: 30px;
+  font-style: italic;
+  margin-top: 20px;
+}
+.fe
 .row-circle {
   display: flex;
   max-width: 50%;
