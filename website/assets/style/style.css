@@ -652,6 +652,14 @@ width:50%;
   margin: 2em 0;
 }
 
+.map-container {
+  width: 100%;
+  height: 500px;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
 
 .container {
   position: relative;

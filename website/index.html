@@ -4,41 +4,42 @@
 <head>
   <title>Buffalo's Edge Retreat</title>
   <meta charset="UTF-8" />
-  <meta name="description" content="Keyword rich narrative on site purpose" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Cabin and canoe rentals near the Buffalo National River." />
   <meta name="author" content="Cassandra Helmick" />
+
+  <link rel="icon" href="assets/img/buffalo-logo.svg" type="image/svg+xml">
   <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://use.typekit.net/sda3rnl.css">
-  <link rel="stylesheet" href="https://use.typekit.net/sda3rnl.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Sigmar&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Sigmar&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/style/style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+</head>
 
 <body>
 
   <header role="banner" class="primary">
     <img src="assets/img/buffalo-logo.svg" alt="Buffalo's Edge Retreat Logo" class="logo">
     <h1>Buffalo's Edge Retreat</h1>
-   
 
     <nav class="navbar">
-   
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="cabin.html">Cabins</a></li>
         <li><a href="rental.html">Canoes</a></li>
         <li><a href="river.html">River Conditions</a></li>
-        <li><a href="booking.html" class="now"> Book Now</a></li>
+        <li><a href="booking.html" class="now">Book Now</a></li>
       </ul>
-   
     </nav>
   </header>
 
-  <div class="content">
+  <main class="content">
     <div class="hero" style="background-image: url('assets/img/buffalo.home.jpg');">
-      <h2 class="title">PADDLE, EXPLORE, BREATHE. </h2>
+      <h2 class="title">PADDLE, EXPLORE, BREATHE.</h2>
     </div>
- 
+
     <h2 class="tag">Adventure starts here.</h2>
 
     <section class="intro">
@@ -46,12 +47,13 @@
       <p>
         Nestled in the heart of the Ozark Mountains, just minutes from the Buffalo National River—the first designated national river in the United States—our business offers the perfect launch point for unforgettable outdoor adventures.
         It's a quiet, breathtaking place wrapped in soaring bluffs, crystal-clear streams, and endless stretches of wild, wooded trails. Whether you're floating down the river, hiking through the woods, or just relaxing in a cabin under the stars, this place is made for people who love the outdoors as much as we do.
-        It's the kind of place that makes you slow down, breathe a little deeper, and really take in the beauty around you.
       </p>
 
       <hr>
 
-      <img src="assets/img/buffalo-river-map.jpg" alt="Map of the Buffalo National River">
+      <!-- ✅ Interactive Map Section -->
+      <h3>Explore River Access Points</h3>
+      <div id="map" class="map-container" style="width:100%; height:500px; margin-bottom: 2rem;"></div>
 
       <hr>
 
@@ -59,42 +61,41 @@
       <p>
         We're two lifelong friends who've always shared a deep love for nature and the outdoors. After spending many years exploring trails, rivers, and wild places, we decided it was time to turn that passion into something real.
         When we came upon this beautiful piece of land near the Buffalo National River, we knew it was the perfect spot to start something special. What started with a couple of cabins and a handful of canoes has grown into a dream come true.
-        Our goal is to give people of all walks of life a place to explore, breathe, paddle, and experience the same joy that inspired us from the beginning.
       </p>
 
-     
-     
       <div class="row-circle2">
         <div class="container">
           <a class="link" href="cabin.html">
-            <img src="assets/img/bear-ridge-1.jpg" alt="Bear Ridge Cabin exterior" class="links" loading="lazy">
+            <img src="assets/img/bear-ridge-1.jpg" alt="Exterior view of Bear Ridge Cabin" class="links" loading="lazy">
             <div class="center">Cabins</div>
           </a>
         </div>
         <div class="container">
           <a class="link" href="rental.html">
-            <img src="assets/img/person-canoe.jpg" alt="Person paddling a canoe" class="links" loading="lazy">
+            <img src="assets/img/person-canoe.jpg" alt="Person paddling a red canoe on the Buffalo River" class="links" loading="lazy">
             <div class="center">Canoes</div>
           </a>
         </div>
         <div class="container">
           <a class="link" href="river.html">
-            <img src="assets/img/dirty-river.jpg" alt="Rafts floating on the river" class="links" loading="lazy">
+            <img src="assets/img/dirty-river.jpg" alt="Group of rafts floating on the river" class="links" loading="lazy">
             <div class="center">River</div>
           </a>
         </div>
       </div>
     </section>
+  </main>
 
-  </div>
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="assets/script/script.js"></script>
 
-<script src="assets/js/script.js"></script>
   <footer id="colophon" role="contentinfo">
-    <h6>&copy; 2025 Buffalo's Edge Retreat | <a href="mailto:info@buffalosedge.com">info@buffalosedge.com</a> | <a href="#top">Back To Top</a></h6>
+    <h6>&copy; 2025 Buffalo's Edge Retreat |
+      <a href="mailto:info@buffalosedge.com">info@buffalosedge.com</a> |
+      <a href="#top">Back To Top</a>
+    </h6>
   </footer>
-
 
 </body>
 
 </html>
-

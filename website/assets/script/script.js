@@ -1,4 +1,4 @@
-// --- Carousel 3D Section (leave as-is) ---
+// --- Carousel 3D Section ---
 const carousel = document.getElementById("carousel3d");
 if (carousel) {
   const images = carousel.getElementsByTagName("img");
@@ -15,13 +15,11 @@ if (carousel) {
     carousel.style.transform = `rotateY(${currAngle}deg)`;
   }
 
-  window.rotateCarousel = rotateCarousel; 
-  
+  window.rotateCarousel = rotateCarousel;
 }
 
-// --- Accordion Section (leave as-is) ---
+// --- Accordion Section ---
 const items = document.querySelectorAll('.accordion button');
-
 function toggleAccordion() {
   const itemToggle = this.getAttribute('aria-expanded');
 
@@ -29,50 +27,38 @@ function toggleAccordion() {
     items[i].setAttribute('aria-expanded', 'false');
   }
 
-  if (itemToggle == 'false') {
+  if (itemToggle === 'false') {
     this.setAttribute('aria-expanded', 'true');
   }
 }
+items.forEach(item => item.addEventListener('click', toggleAccordion));
 
-items.forEach((item) => item.addEventListener('click', toggleAccordion));
-
-// --- River Chart Section ---
-let riverChart; 
-
+// --- River Chart (Height Only) ---
+let riverChart;
 const fetchDataButton = document.getElementById('fetchDataButton');
 const riverSelect = document.getElementById('riverSelect');
 
-if (fetchDataButton) {
+if (fetchDataButton && riverSelect) {
   fetchDataButton.addEventListener('click', () => {
     const selectedSite = riverSelect.value;
 
-    fetch(`https://waterservices.usgs.gov/nwis/iv/?format=json&sites=${selectedSite}&period=P7D&siteStatus=active&parameterCd=00065,00010`)
+    fetch(`https://waterservices.usgs.gov/nwis/iv/?format=json&sites=${selectedSite}&period=P7D&siteStatus=active&parameterCd=00065`)
       .then(response => response.json())
       .then(data => {
         const timeSeries = data.value.timeSeries;
-
         if (!timeSeries || timeSeries.length === 0) {
           console.error('No data available for this site.');
           return;
         }
 
-        // Extract timestamps
         const labels = timeSeries[0].values[0].value.map(entry => {
           const date = new Date(entry.dateTime);
           return `${date.getMonth() + 1}/${date.getDate()} ${date.getHours()}:00`;
         });
 
-        // Extract height (00065) and temperature (00010)
         const heightSeries = timeSeries.find(series => series.variable.variableCode[0].value === "00065");
-        const tempSeries = timeSeries.find(series => series.variable.variableCode[0].value === "00010");
-
         const heightData = heightSeries?.values[0].value.map(entry => parseFloat(entry.value)) || [];
-        const tempData = tempSeries?.values[0].value.map(entry => parseFloat(entry.value)) || [];
 
-        console.log('Height Data:', heightData);
-        console.log('Temperature Data:', tempData);
-
-        // Destroy previous chart if exists
         if (riverChart) {
           riverChart.destroy();
         }
@@ -90,14 +76,6 @@ if (fetchDataButton) {
                 borderColor: 'rgba(54, 162, 235, 1)',
                 borderWidth: 2,
                 yAxisID: 'y',
-              },
-              {
-                label: 'Temperature (°C)',
-                data: tempData,
-                backgroundColor: 'rgba(255, 99, 132, 0.2)',
-                borderColor: 'rgba(255, 99, 132, 1)',
-                borderWidth: 2,
-                yAxisID: 'y1',
               }
             ]
           },
@@ -117,17 +95,6 @@ if (fetchDataButton) {
                   text: 'Height (ft)'
                 }
               },
-              y1: {
-                type: 'linear',
-                position: 'right',
-                title: {
-                  display: true,
-                  text: 'Temperature (°C)'
-                },
-                grid: {
-                  drawOnChartArea: false, // Only draw grid for y axis
-                }
-              },
               x: {
                 title: {
                   display: true,
@@ -143,43 +110,30 @@ if (fetchDataButton) {
       });
   });
 }
-//Calendar Section//
 
-// ===== CALENDAR WITH PRICE TRACKING =====
+// --- Calendar with Price Tracking ---
 const calendarConfigs = [
-  {
-    id: 1,
-    currentMonth: new Date().getMonth(),
-    currentYear: new Date().getFullYear(),
-    selectedDates: [],
-    pricePerDay: 67
-  },
-  {
-    id: 2,
-    currentMonth: new Date().getMonth(),
-    currentYear: new Date().getFullYear(),
-    selectedDates: [],
-    pricePerDay: 45
-  }
+  { id: 1, currentMonth: new Date().getMonth(), currentYear: new Date().getFullYear(), selectedDates: [], pricePerDay: 67 },
+  { id: 2, currentMonth: new Date().getMonth(), currentYear: new Date().getFullYear(), selectedDates: [], pricePerDay: 45 }
 ];
 
-const monthNames = [
-  'January', 'February', 'March', 'April', 'May', 'June',
-  'July', 'August', 'September', 'October', 'November', 'December'
-];
+const monthNames = ['January', 'February', 'March', 'April', 'May', 'June',
+                    'July', 'August', 'September', 'October', 'November', 'December'];
 
 function updateHeader(config) {
   const span = document.getElementById(`month-year-${config.id}`);
-  span.textContent = `${monthNames[config.currentMonth]} ${config.currentYear}`;
+  if (span) span.textContent = `${monthNames[config.currentMonth]} ${config.currentYear}`;
 }
 
 function updatePrice(config) {
   const total = config.selectedDates.length * config.pricePerDay;
-  document.getElementById(`price-display-${config.id}`).textContent = `Total Price: $${total}`;
+  const display = document.getElementById(`price-display-${config.id}`);
+  if (display) display.textContent = `Total Price: $${total}`;
 }
 
 function generateCalendar(config) {
   const container = document.getElementById(`calendar-${config.id}`);
+  if (!container) return;
   container.innerHTML = '';
 
   const firstDay = new Date(config.currentYear, config.currentMonth, 1).getDay();
@@ -225,6 +179,8 @@ document.querySelectorAll('.nav-arrow').forEach(button => {
   button.addEventListener('click', (e) => {
     const id = +button.dataset.id;
     const config = calendarConfigs.find(c => c.id === id);
+    if (!config) return;
+
     if (button.classList.contains('prev')) {
       config.currentMonth--;
       if (config.currentMonth < 0) {
@@ -245,4 +201,39 @@ document.querySelectorAll('.nav-arrow').forEach(button => {
 
 renderAllCalendars();
 
-  
+// --- Leaflet Interactive Map ---
+const mapElement = document.getElementById('map');
+
+if (mapElement) {
+  const map = L.map('map').setView([35.995, -93.176], 10);
+
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '© OpenStreetMap contributors'
+  }).addTo(map);
+
+  const locations = [
+    { name: "Ponca", coords: [36.046, -93.319] },
+    { name: "Boxley", coords: [35.985, -93.298] },
+    { name: "Carver", coords: [35.986, -93.104] },
+    { name: "Pruitt", coords: [36.030, -93.184] }
+  ];
+
+  let markers = [];
+
+  function handleMarkerClick(clickedMarker) {
+    markers.forEach(marker => {
+      marker.setOpacity(marker === clickedMarker ? 1 : 0.3);
+    });
+  }
+
+  locations.forEach(location => {
+    const marker = L.marker(location.coords)
+      .addTo(map)
+      .bindPopup(`${location.name} - Buffalo River Access`)
+      .on('click', function () {
+        handleMarkerClick(this);
+      });
+
+    markers.push(marker);
+  });
+}

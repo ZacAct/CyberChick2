@@ -10,8 +10,8 @@
   <link rel="stylesheet" href="https://use.typekit.net/sda3rnl.css">
   <link rel="stylesheet" href="https://use.typekit.net/sda3rnl.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Sigmar&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Sigmar&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/style/style.css" />
 </head>
 
@@ -20,45 +20,40 @@
   <header role="banner" class="primary">
     <img src="assets/img/buffalo-logo.svg" alt="Buffalo's Edge Retreat Logo" class="logo">
     <h1>Buffalo's Edge Retreat</h1>
-   
 
     <nav class="navbar">
-   
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="cabin.html">Cabins</a></li>
         <li><a href="rental.html">Canoes</a></li>
         <li><a href="river.html">River Conditions</a></li>
-        <li><a href="booking.html" class="now"> Book Now</a></li>
+        <li><a href="booking.html" class="now">Book Now</a></li>
       </ul>
-   
     </nav>
   </header>
 
   <div class="content">
     <div class="hero" style="background-image: url('assets/img/canoe-pov2.jpg');">
-      <h2 class="title">RIVER CONDITION </h2>
+      <h2 class="title">RIVER CONDITION</h2>
     </div>
 
     <h2 class="tag">Adventure starts here.</h2>
 
     <section class="intro">
-     <div> <h1 class="river">River Gauge</h1>
-      <p>Select a launch point to view the Buffalo River's temperature and height data:</p>
-      <select id="riverSelect">
+      <div>
+        <h1 class="river">River Gauge</h1>
+        <p>Select a launch point to view the Buffalo River's temperature and height data:</p>
+        <select id="riverSelect">
           <option value="07055646">Boxley</option>
           <option value="07055660">Ponca</option>
           <option value="07055680">Pruitt</option>
           <option value="07055780">Caruer</option>
-      </select>
-      <button id="fetchDataButton">Fetch Data</button>
-    </div>
-    
-      <canvas id="riverChart" width="400" height="400"></canvas>
-      
+        </select>
+        <button id="fetchDataButton">Fetch Data</button>
+      </div>
 
-     
-     
+      <canvas id="riverChart" width="400" height="400"></canvas>
+
       <div class="row-circle2">
         <div class="container">
           <a class="link" href="cabin.html">
@@ -80,16 +75,20 @@
         </div>
       </div>
     </section>
-
   </div>
 
-<script src="assets/script/script.js"></script>
+  <!-- ✅ Load Chart.js BEFORE your custom script -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Your custom JS file -->
+  <script src="assets/script/script.js"></script>
+
   <footer id="colophon" role="contentinfo">
-    <h6>&copy; 2025 Buffalo's Edge Retreat | <a href="mailto:info@buffalosedge.com">info@buffalosedge.com</a> | <a href="#top">Back To Top</a></h6>
+    <h6>&copy; 2025 Buffalo's Edge Retreat | 
+      <a href="mailto:info@buffalosedge.com">info@buffalosedge.com</a> | 
+      <a href="#top">Back To Top</a>
+    </h6>
   </footer>
 
-
 </body>
-
 </html>
-
