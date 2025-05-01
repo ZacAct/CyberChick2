@@ -2,22 +2,17 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
   <title>Buffalo's Edge Retreat</title>
-  <meta name="description" content="Buffalo's Edge Retreat cabin and canoe rentals" />
+  <meta charset="UTF-8" />
+  <meta name="description" content="Keyword rich narrative on site purpose" />
   <meta name="author" content="Cassandra Helmick" />
-
-  
- 
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Sigmar&family=Space+Grotesk:wght@<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://use.typekit.net/sda3rnl.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="assets/style/style.css">
-
-  <link rel="icon" href="assets/img/buffalo-logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="https://use.typekit.net/sda3rnl.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Sigmar&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style/style.css" />
 </head>
 
 <body>
@@ -47,30 +42,79 @@
       <h2 class="title">BOOK NOW! </h2>
     </div>
 
-    <h2 class="tag">Adventure starts here.</h2>
-
     <section class="intro">
+        <div class="book-cabin">
       <h3>Book a Cabin</h3>
-   
-
-      <hr>
-
-      
-
-      <hr>
-
-      <h3 class="story">Book a Canoe</h3>
-      
-      <div id="calendar-header" class="calendar-header">
-        <button id="prev-month" class="nav-arrow">&lt;</button>
-        <span id="month-year"></span>
-        <button id="next-month" class="nav-arrow">&gt;</button>
-      </div>
-      <div id="calendar" class="calendar"></div>
-      <p id="price-display">Total Price: $0</p>
-
-
      
+      <aside role="complementary">
+        <div class="rates2">
+          <article class="widget">
+            <header>
+              <h2 class="night2">Per Night </h2>
+            </header>
+            <p class="price">$195 </p>
+          </article>
+          <article class="widget">
+            <header>
+              <h2 class="week2">Per Week </h2>
+            </header>
+            <p class="price">$1195</p>
+        </div>
+        </aside>
+      <section class="calendar-wrapper">
+        
+        <div class="calendar-header" id="calendar-header-1">
+          <button class="nav-arrow prev" data-id="1">&lt;</button>
+          <span id="month-year-1" class="month-year"></span>
+          <button class="nav-arrow next" data-id="1">&gt;</button>
+        </div>
+        <div class="calendar-days">
+          <div>Sun</div><div>Mon</div><div>Tue</div><div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div>
+        </div>
+        <div id="calendar-1" class="calendar"></div>
+        
+      </section>
+</div>
+<div class="price-book-wrap">
+    <p id="price-display-1" aria-live="polite">Total Price: $0</p>
+    <a href="booking.html" class="book-btn">Book Now</a>
+  </div>
+      <hr>
+
+      
+
+  <div class="book-canoe">
+
+      <h3 class="story">Rent a Canoe</h3>
+      <aside role="complementary">
+        <div class="rates2">
+          <article class="widget">
+            <header>
+              <h2 class="night2">Per Day </h2>
+            </header>
+            <p class="price">$67 </p>
+          </article>
+        
+        </div>
+        </aside>
+      <section class="calendar-wrapper">
+      
+        <div class="calendar-header" id="calendar-header-2">
+          <button class="nav-arrow prev" data-id="2">&lt;</button>
+          <span id="month-year-2" class="month-year"></span>
+          <button class="nav-arrow next" data-id="2">&gt;</button>
+        </div>
+        <div class="calendar-days">
+          <div>Sun</div><div>Mon</div><div>Tue</div><div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div>
+        </div>
+        <div id="calendar-2" class="calendar"></div>
+        
+      </section>
+      <div class="price-book-wrap">
+        <p id="price-display-2" aria-live="polite">Total Price: $0</p>
+        <a href="booking.html" class="book-btn">Book Now</a>
+      </div>
+     </div>
      
       <div class="row-circle2">
         <div class="container">
@@ -92,11 +136,11 @@
           </a>
         </div>
       </div>
-    </section>
+    
 
   </div>
 
-<script src="assets/js/script.js"></script>
+<script src="assets/script/script.js"></script>
 
   <footer id="colophon" role="contentinfo">
     <h6>&copy; 2025 Buffalo's Edge Retreat | <a href="mailto:info@buffalosedge.com">info@buffalosedge.com</a> | <a href="#top">Back To Top</a></h6>

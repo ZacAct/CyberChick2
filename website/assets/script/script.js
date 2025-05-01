@@ -145,108 +145,104 @@ if (fetchDataButton) {
 }
 //Calendar Section//
 
-document.addEventListener('DOMContentLoaded', () => {
-  let currentMonth = new Date().getMonth();
-  let currentYear = new Date().getFullYear();
-  let selectedDates = new Set();
+// ===== CALENDAR WITH PRICE TRACKING =====
+const calendarConfigs = [
+  {
+    id: 1,
+    currentMonth: new Date().getMonth(),
+    currentYear: new Date().getFullYear(),
+    selectedDates: [],
+    pricePerDay: 67
+  },
+  {
+    id: 2,
+    currentMonth: new Date().getMonth(),
+    currentYear: new Date().getFullYear(),
+    selectedDates: [],
+    pricePerDay: 45
+  }
+];
 
-  const monthYearElement = document.getElementById('month-year');
-  const calendarElement = document.getElementById('calendar');
-  const priceDisplay = document.getElementById('price-display');
+const monthNames = [
+  'January', 'February', 'March', 'April', 'May', 'June',
+  'July', 'August', 'September', 'October', 'November', 'December'
+];
 
-  function updateCalendarHeader() {
-    const monthNames = [
-      'January', 'February', 'March', 'April', 'May', 'June',
-      'July', 'August', 'September', 'October', 'November', 'December'
-    ];
-    monthYearElement.textContent = `${monthNames[currentMonth]} ${currentYear}`;
+function updateHeader(config) {
+  const span = document.getElementById(`month-year-${config.id}`);
+  span.textContent = `${monthNames[config.currentMonth]} ${config.currentYear}`;
+}
+
+function updatePrice(config) {
+  const total = config.selectedDates.length * config.pricePerDay;
+  document.getElementById(`price-display-${config.id}`).textContent = `Total Price: $${total}`;
+}
+
+function generateCalendar(config) {
+  const container = document.getElementById(`calendar-${config.id}`);
+  container.innerHTML = '';
+
+  const firstDay = new Date(config.currentYear, config.currentMonth, 1).getDay();
+  const daysInMonth = new Date(config.currentYear, config.currentMonth + 1, 0).getDate();
+
+  for (let i = 0; i < firstDay; i++) {
+    const empty = document.createElement('div');
+    container.appendChild(empty);
   }
 
-  function handleDateClick(event) {
-    const dayCell = event.target;
-    const day = dayCell.dataset.day;
-    const key = `${currentYear}-${currentMonth}-${day}`;
+  for (let day = 1; day <= daysInMonth; day++) {
+    const cell = document.createElement('div');
+    cell.textContent = day;
+    const dateStr = `${config.currentYear}-${config.currentMonth + 1}-${day}`;
 
-    if (dayCell.classList.contains('past')) return;
-
-    if (dayCell.classList.contains('selected')) {
-      dayCell.classList.remove('selected');
-      selectedDates.delete(key);
-    } else {
-      dayCell.classList.add('selected');
-      selectedDates.add(key);
+    if (config.selectedDates.includes(dateStr)) {
+      cell.classList.add('selected');
     }
 
-    updatePrice();
-  }
-
-  function updatePrice() {
-    const totalPrice = selectedDates.size * 67;
-    priceDisplay.textContent = `Total Price: $${totalPrice}`;
-  }
-
-  function generateCalendar() {
-    calendarElement.innerHTML = '';
-
-    const today = new Date();
-    const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
-    const firstDay = new Date(currentYear, currentMonth, 1).getDay();
-
-    const daysOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-    daysOfWeek.forEach(day => {
-      const header = document.createElement('div');
-      header.classList.add('header');
-      header.textContent = day;
-      calendarElement.appendChild(header);
+    cell.addEventListener('click', () => {
+      if (config.selectedDates.includes(dateStr)) {
+        config.selectedDates = config.selectedDates.filter(d => d !== dateStr);
+        cell.classList.remove('selected');
+      } else {
+        config.selectedDates.push(dateStr);
+        cell.classList.add('selected');
+      }
+      updatePrice(config);
     });
 
-    for (let i = 0; i < firstDay; i++) {
-      const emptyCell = document.createElement('div');
-      calendarElement.appendChild(emptyCell);
-    }
-
-    for (let day = 1; day <= daysInMonth; day++) {
-      const dayCell = document.createElement('div');
-      dayCell.textContent = day;
-      dayCell.dataset.day = day;
-
-      const cellDate = new Date(currentYear, currentMonth, day);
-      const todayDate = new Date(today.getFullYear(), today.getMonth(), today.getDate());
-
-      if (cellDate < todayDate) {
-        dayCell.classList.add('past');
-        dayCell.textContent = `${day} ❌`;
-      }
-
-      const key = `${currentYear}-${currentMonth}-${day}`;
-      if (selectedDates.has(key)) {
-        dayCell.classList.add('selected');
-      }
-
-      dayCell.addEventListener('click', handleDateClick);
-      calendarElement.appendChild(dayCell);
-    }
-
-    updateCalendarHeader();
+    container.appendChild(cell);
   }
+}
 
-  document.getElementById('prev-month').addEventListener('click', () => {
-    currentMonth--;
-    if (currentMonth < 0) {
-      currentMonth = 11;
-      currentYear--;
-    }
-    generateCalendar();
+function renderAllCalendars() {
+  calendarConfigs.forEach(config => {
+    updateHeader(config);
+    generateCalendar(config);
   });
+}
 
-  document.getElementById('next-month').addEventListener('click', () => {
-    currentMonth++;
-    if (currentMonth > 11) {
-      currentMonth = 0;
-      currentYear++;
+document.querySelectorAll('.nav-arrow').forEach(button => {
+  button.addEventListener('click', (e) => {
+    const id = +button.dataset.id;
+    const config = calendarConfigs.find(c => c.id === id);
+    if (button.classList.contains('prev')) {
+      config.currentMonth--;
+      if (config.currentMonth < 0) {
+        config.currentMonth = 11;
+        config.currentYear--;
+      }
+    } else {
+      config.currentMonth++;
+      if (config.currentMonth > 11) {
+        config.currentMonth = 0;
+        config.currentYear++;
+      }
     }
-    generateCalendar();
+    updateHeader(config);
+    generateCalendar(config);
   });
-
-  generateCalendar();
 });
+
+renderAllCalendars();
+
+  
